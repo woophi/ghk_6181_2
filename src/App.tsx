@@ -297,9 +297,7 @@ export const App = () => {
         <div className={appSt.container}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-              <RiskStatus
-                risk={robots.findIndex(robot => robot.id === selectedRobot.id) === robots.length - 1 ? 'medium' : 'low'}
-              />
+              <RiskStatus risk={'medium'} />
               <Status view="muted" color="grey" size={20} uppercase={false}>
                 <Typography.Text
                   view="secondary-small"
@@ -307,7 +305,7 @@ export const App = () => {
                   style={{ display: 'flex', alignItems: 'center', gap: 4 }}
                 >
                   <UsersMIcon width={10} height={10} />
-                  <span style={{ marginTop: '1px' }}>1235 подключили</span>
+                  <span style={{ marginTop: '1px' }}>{selectedRobot.followers} подключили</span>
                 </Typography.Text>
               </Status>
             </div>
@@ -560,7 +558,7 @@ export const App = () => {
             Выберите робота
           </Typography.TitleResponsive>
           <Typography.Text tag="p" defaultMargins={false} style={{ marginTop: '4px' }} view="primary-medium">
-            5 доступно
+            {robots.length} доступно
           </Typography.Text>
         </div>
 
@@ -575,7 +573,7 @@ export const App = () => {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-              <RiskStatus risk={index === robots.length - 1 ? 'medium' : 'low'} />
+              <RiskStatus risk={'medium'} />
               <Status view="muted" color="grey" size={20} uppercase={false}>
                 <Typography.Text
                   view="secondary-small"
@@ -583,7 +581,7 @@ export const App = () => {
                   style={{ display: 'flex', alignItems: 'center', gap: 4 }}
                 >
                   <UsersMIcon width={10} height={10} />
-                  <span style={{ marginTop: '1px' }}>1235 подключили</span>
+                  <span style={{ marginTop: '1px' }}>{robot.followers} подключили</span>
                 </Typography.Text>
               </Status>
             </div>
